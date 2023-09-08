@@ -1,43 +1,36 @@
-from task import * 
+from import_this import (
+    generate_race_data,
+    RaceInfo,
+    )
+ 
 
-C=None
-
-def 
-FinishedPlace = 1
-value_FinishedPlace = 1
-for key,FinishedPlace in RACE_DATA.get(1):
-     print(f'Выиграл -: {key} Значение: {1}')
-for key in RacerInfo():
-    vinner = RacerInfo.get( RacerName)
-    print(vinner)
-def get_Race
-print(RacerName)
-# print(RACE_DATA
-#    print('Ура', vinner, 'победил')
-# )
-#     def player(RacerName: str) -> str:
-#         FinishedPlace = 1
-#         return(FinishedPlace)
-#     key(RacerName)
-# print(key, 'Ура',RacerName, 'победил')
-
-#  print(
-#     alphabet.get(4).get(3)get('A')
-# O_letter = alphabet.get('O', None)
-# if not bool(O_letter):                                                                 #if not O_letter:
-#     print('NO O')                        
+def sort_racers(RACE_DATA: dict) -> dict:
+    order_rd: dict = {}
+    for value in RACE_DATA.values():
+        finishplace: int  = ["FinishedPlace"]
+        order_rd[finishplace] = value
+    return order_rd
 
 
+def print_first_racer(order_rd: dict) -> str:
+    congrat: str =  f'Выиграл - {order_rd[1]["RacerName"]}!!!!!!!!!!!!!!!!!!!! Поздравляем!!'
+    print(congrat + '\n' + '-' * len(congrat))
 
 
-#  if RacerName in FinishedPlace == 1:
-# return(RacerName)
-#     print('Ура', RacerName, 'победил')
+def print_top3_racers(order_rd: dict) -> str:
+    print('Первые три места:\n')
+    for m in range(1, 4):
+        value: dict = order_rd[m]
+        print(f'Гонщик на {m} месте\n' +
+              f'\t Имя: {value ["RacerName"]} \n' +
+              f'\t Команда: {value ["RacerTeam"]} \n' +
+              f'\t Время: {value ["FinishedTimeSeconds"] // 3600}:'+
+              f'{value ["FinishedTimeSeconds"] // 60}:' +
+              f'{value ["FinishedTimeSeconds"] % 60} (H:M:S)'
+              )
 
 
-
-    
-    # if FinishedPlace == 1:
-    #     print('Имя', RacerName,'KAMAZ', RacerTeam, 'Место',FinishedPlace,'Время',FinishedTimeSeconds)
-
-
+if __name__ == '__main__':
+    race_data: RaceInfo = generate_race_data(10)
+    print_first_racer(race_data)
+    print_top3_racers(race_data)
