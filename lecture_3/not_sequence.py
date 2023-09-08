@@ -1,6 +1,7 @@
-not_sequence = 0
-# N: int = int(input('Enter the number: '))
-a = [int(i) for i in input()]
-for i in range(1, len(a)):
-    if a[i] > a[i - 1]:
-        print(a[i])
+_list: list = []
+for i in range (_list):
+    if i - (i-1) >= 1: 
+        print(i)
+    else:
+        print('не найдено')
+
